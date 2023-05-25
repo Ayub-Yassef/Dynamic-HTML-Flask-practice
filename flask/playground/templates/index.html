@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+</head>
+<body>
+    <h1>
+        Welcome to Thunderdome!
+    </h1>
+    <p>Song of the Day: {{message}}</p>
+    <p>No. of plays: {{reps}}</p>
+    <h2>
+        This site commemorates the Queen of Rock n' Roll herself, Tina Turner
+    </h2>
+    <div></div>
+    <h2>
+        nee Anne Mae Bullock
+    </h2>
+    {% for x in range(0, reps): %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {% if message == "Simply the Best" %}
+        <p>Please play and sing along to this song, the prescribed number of times.</p>
+    {% endif %}
+</body>
+</html>
