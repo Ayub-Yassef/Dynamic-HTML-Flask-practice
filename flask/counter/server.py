@@ -8,8 +8,8 @@ def index():
     else:
         session["count"] += 1
     return render_template("index.html")
-@app.route('/restart')
-def restart():
+@app.route('/reset')
+def reset_counter():
     session.clear()
     return redirect('/')
 if __name__=="__main__":
