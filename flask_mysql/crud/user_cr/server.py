@@ -3,22 +3,16 @@ from user import User
 app = Flask(__name__)
 @app.route('/')
 def create_profile():
-    users=User.get_all_users()
-    print(users)
-    return render_template("read.html", users=users)
+    these_users=User.get_all_users()
+    return render_template("read.html", users=these_users)#Users is a named argument. these_users is its value
 
-@app.route('/form_submission', methods=["POST"])
-def profile_generated():
-    data={
-        "first_name": request.form["first_name"],
-        "last_name": request.form["last_name"],
-        "email": request.form["email"]
-    }
-    User.add_user(data)
+@app.route('/application_process', methods=["POST"])
+def application_process():
+    User.add_user(request.form)
     return redirect("/")
 
-@app.route('/create')
-def members_display():
+@app.route('/application_page')
+def application_page():
     return render_template("create.html")
 
 if __name__=="__main__":
