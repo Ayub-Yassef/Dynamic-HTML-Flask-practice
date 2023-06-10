@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User CR</title>
+</head>
+<body>
+    <h1>Our Exclusive Club: by invitation only</h1>
+    <h2>We're delighted about you joining us - see below for our membership roster.</h2>
+    <table>
+        <tbody>
+            {% for user in users %}
+            <h1>{{ user.id}}</h1>
+                <p>First Name: {{user.first_name}}</p>
+                <p>Last Name: {{user.last_name}}</p>
+                <p>email: {{user.email}}</p>
+                <p>Created At: {{user.created_at}}</p>
+                <a href="/users/update_user/{{ user.id }}">Edit Profile</a>
+                <br>
+                <a href="/users/delete/{{ user.id }}">Delete Profile</a>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/application_page">Apply for Membership</a>
+    
+</body>
+</html>
