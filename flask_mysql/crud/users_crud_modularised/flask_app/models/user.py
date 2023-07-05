@@ -1,6 +1,4 @@
-from mysqlconnection import connectToMySQL
-
-
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class User:
     db="users_schema"
@@ -24,9 +22,10 @@ class User:
     @classmethod
     def get_user(cls,id):
         data = {"id": id}
-        query = "SELECT * FROM users WHERE id=%(id)s;"
-        results = connectToMySQL(cls.db).query_db(query,data)
-        return cls(results[0])
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL(cls.db).query_db(query,data)
+        print (result)
+        return cls(result[0])
     
     @classmethod
     def add_user(cls, data):
@@ -44,7 +43,7 @@ class User:
         return results
     
     @classmethod
-    def delete(cls, user_id):
+    def destroy(cls, user_id):
         query = """
             DELETE FROM users WHERE id = %(id)s;"""
         data = {"id": user_id}

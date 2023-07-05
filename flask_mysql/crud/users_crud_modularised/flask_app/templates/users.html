@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1> Have a look at who's here already.</h1>
+    <thead>
+        {% for user in users %}
+            <tr>
+                <th>First Name: {{user.first_name}}</th>
+                <br>
+                <th>Last Name: {{user.last_name}}</th>
+                <br>
+                <th>Email: {{user.email}}</th>
+                <br>
+                <th>Created At: {{user.created_at}}</th>
+                <br>
+                <th>Actions:
+                <br>
+                    <a href="/user/show/{{ user.id }}">Show</a> |
+                    <a href="/user/edit_user/{{ user.id }}">Edit</a> |
+                    <a href="/user/destroy/{{ user.id }}">Delete</a>
+                </th>
+                <br>
+                <br>
+            </tr>
+        {% endfor %}
+    </thead>
+    <a href="/user/add_new">Join The Club</a>
+</body>
+</html>
