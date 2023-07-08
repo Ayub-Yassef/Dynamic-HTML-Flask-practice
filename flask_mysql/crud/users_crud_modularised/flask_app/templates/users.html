@@ -6,32 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
 </head>
 <body>
-    <h1> Have a look at who's here already.</h1>
-    <thead>
-        {% for user in users %}
-            <tr>
-                <th>First Name: {{user.first_name}}</th>
-                <br>
-                <th>Last Name: {{user.last_name}}</th>
-                <br>
-                <th>Email: {{user.email}}</th>
-                <br>
-                <th>Created At: {{user.created_at}}</th>
-                <br>
-                <th>Actions:
-                <br>
-                    <a href="/user/show/{{ user.id }}">Show</a> |
-                    <a href="/user/edit_user/{{ user.id }}">Edit</a> |
-                    <a href="/user/destroy/{{ user.id }}">Delete</a>
-                </th>
-                <br>
-                <br>
-            </tr>
-        {% endfor %}
-    </thead>
-    <a href="/user/add_new">Join The Club</a>
+    <div class="container">
+        <h1> Have a look at who's here already.</h1>
+        <thead>
+            {% for user in users %}
+                <tr>
+                    <th>First Name: {{user.first_name}}</th>
+                    <br>
+                    <th>Last Name: {{user.last_name}}</th>
+                    <br>
+                    <th>Email: {{user.email}}</th>
+                    <br>
+                    <th>Created At: {{user.created_at}}</th>
+                    <br>
+                    <th>Actions:
+                    <br>
+                        <a href="/user/show/{{ user.id }}">Show</a> |
+                        <a href="/user/edit_user/{{ user.id }}">Edit</a> |
+                        <a href="/user/destroy/{{ user.id }}">Delete</a>
+                    </th>
+                    <br>
+                    <br>
+                </tr>
+            {% endfor %}
+        </thead>
+    
+    <a href="/user/add_new" class=".btn-primary">Join The Club</a>
+    </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 </body>
 </html>
