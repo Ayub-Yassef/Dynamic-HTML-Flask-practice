@@ -44,10 +44,15 @@ passenger_manifest = [
 ]
 
 class Passenger:
-    def __init__(self, passenger_manifest):
-        self.name = passenger_manifest["name"]
-        self.nationality = passenger_manifest["nationality"]
-        self.seat = passenger_manifest["seat"]
-        self.oneworld_partner = passenger_manifest["Oneworld Parnter"]
+    def __init__(self, passenger_data):
+        self.name = passenger_data["name"]
+        self.nationality = passenger_data["nationality"]
+        self.seat = passenger_data["seat"]
+        self.oneworld_partner = passenger_data["Oneworld Partner"]
 
-print(passenger_manifest[5]) 
+passenger_instances = [Passenger(data) for data in passenger_manifest]
+
+for passenger in  passenger_instances:
+    print(passenger.seat)
+
+
