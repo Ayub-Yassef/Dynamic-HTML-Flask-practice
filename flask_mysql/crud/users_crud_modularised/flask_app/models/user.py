@@ -17,7 +17,7 @@ class User:
         users=[]
         for user in results:
             users.append(cls(user))
-        return users
+        return users 
     
     @classmethod
     def get_user(cls,id):
