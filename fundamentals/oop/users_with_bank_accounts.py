@@ -29,9 +29,13 @@ class User:
     def __init__(self, name, email):
         self.name = name
         self.email = email
-        self.account = BankAccount(int_rate= 0.02, balance=0)
+        self.account = {}
+    def open_new_account(self, int_rate=0.03, balance=0, account_type="Current"):
+        new_account = BankAccount(int_rate, balance)
+        self.accounts[account_type] = new_account
+        return self
     def make_deposit(self, amount, account_type="Current Account"):
-        self.account.deposit(amount)
+        self.accounts[account_type].deposit(amount)
         return self
     def make_withdrawal(self, amount):
         self.account.withdraw(amount)
