@@ -11,23 +11,28 @@
     <h1>
         Dojo Survey
     </h1>
-    <form action="/result" method="post">
+    <form action="/submit" method="post">
         <label>Your Name:</label>
         <input type="text" name="Name">
+        <div></div>
         <label>Dojo Location: </label>
         <select name="location">
-            <option value="Basement">Basement</option>
-            <option value="Xanadu">Xanadu</option>
+            <option value="Basement">Mum's Basement</option>
+            <option value="Xanadu">Narnia</option>
             <option value="Starbucks">Starbucks</option>
         </select>
+        <div></div>
         <label>Favourite Language: </label>
         <select name="language">
             <option value="Python">Python</option>
             <option value="Flask">Flask</option>
             <option value="MySQL">MySQL</option>
         </select>
+        <div></div>
         <label>Comment (optional): </label>
+        <div></div>
         <textarea name="briefBio" cols="35" rows="5"></textarea>
+        <div></div>
         <button type="submit">Submit</button>
     </form>
 </body>

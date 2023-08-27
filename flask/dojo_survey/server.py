@@ -9,15 +9,15 @@ app.secret_key = os.environ.get('SECRET_KEY')
 def survey_form():
     return render_template('index.html')
 
-@app.route('/result', methods = ["post"])
+@app.route('/submit', methods = ["post"])
 def result():
     session["Name"] = request.form["Name"]
     session["location"] = request.form["location"]
     session["language"] = request.form["language"]
     session["briefBio"] = request.form["briefBio"]
-    return redirect('/showme')
+    return redirect('/form_submitted')
 
-@app.route('/showme')
+@app.route('/form_submitted')
 def form_filled():
     return render_template('show.html')
 
