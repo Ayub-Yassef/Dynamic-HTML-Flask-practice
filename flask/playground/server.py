@@ -3,11 +3,11 @@ app = Flask(__name__)
 
 @app.route('/play')
 def challenge_one():
-    return render_template('index.html', num=3, color="red")
+    return render_template('index.html', num=3, color="blue")
 
 @app.route('/play/<int:num>')
 def challenge_two(num):
-    return render_template('index.html', num=num, color="green")
+    return render_template('index.html', num=num, color="blue")
 
 @app.route('/play/<int:num>/<string:color>')
 def challenge_three(num, color):
