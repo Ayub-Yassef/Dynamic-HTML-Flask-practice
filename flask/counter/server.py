@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, redirect
 app = Flask(__name__)
-app.secret_key = "deny, deny, deny"
+app.secret_key = "deNile is a river in Egypt"
 @app.route('/')
 def index():
     if "count" not in session:
