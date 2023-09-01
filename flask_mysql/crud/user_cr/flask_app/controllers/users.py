@@ -1,5 +1,5 @@
 from flask_app import app
-from flask import render_template, redirect, request, session
+from flask_app import render_template, redirect, request, session
 from flask_app.models import user # import entire file, rather than class, to avoid circular imports
 
 # Create Users Controller
@@ -11,8 +11,8 @@ class Users:
         self.email = data['email']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-    @classmethod
-    def fetch_info(cls):
+    # @classmethod
+    # def fetch_info(cls):
 
 # Read Users Controller
 
