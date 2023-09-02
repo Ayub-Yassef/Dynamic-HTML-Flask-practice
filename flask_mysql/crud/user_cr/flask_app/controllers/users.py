@@ -1,5 +1,5 @@
 from flask_app import app
-from flask_app import render_template, redirect, request, session
+from flask import render_template, redirect, request, session
 from flask_app.models import user # import entire file, rather than class, to avoid circular imports
 
 # Create Users Controller
