@@ -13,12 +13,21 @@ class Users:
         self.updated_at = data['updated_at']
     # @classmethod
     # def fetch_info(cls):
+# Create Users Controller
+@app.route('/users/create')
+def add_new():
+    return render_template ("create.html")
 
+@app.route('/user/create_new', methods=['POST'])
+def create():
+    print(request.form)
+    user.User.add_user(request.form)
+    return redirect('/')
 # Read Users Controller
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('read.html')
 
 
 # Update Users Controller
