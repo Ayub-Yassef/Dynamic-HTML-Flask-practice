@@ -1,1 +1,1 @@
-# Dynamic-HTML-Flask-practice - Various exercises and assignments completed during my certification of full-stack development.
+# Dynamic-HTML-Flask-playground - Various exercises as I taught myself how to do a full-stack web application.
